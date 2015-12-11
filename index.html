@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+
+	<head>
+
+		<!-- estilos, la pagina debe estar estilizada antes de que el dom se carge-->
+	</head>
+	<body ng-app="AngularBasic" ng-controller="MainController as main">
+		<p ng-show="showp">{{ name }}</p> <!-- priority level 0 -->
+		<p ng-if="showp">{{ name2 }}</p> <!-- priority level 600 -->
+		<p>Hola mundo</p>	
+		<p>La fecha de hoy es {{ currentDate | date: "yyyy-MM-dd HH:mm:ss Z" }}</p>
+		<p>moneyy!! {{money | currency}}</p>
+		<p>Telefono: {{phone | tel}}</p>
+<!-- 		<select>
+			<option ng-repeat="a in cities track by $index">{{a}}</option>
+		</select> -->
+
+
+		<select ng-options="city for city in cities" ng-model="city" ng-change="getBanana()"></select>
+
+
+		{{currentWeather.weather[0].description}}
+
+		<!-- scripts, son cargados al final, la parte funcional de la aplicacion se carga despues de que la pagina sea renderizada. -->
+		
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="main.controller.js"></script>
+		<script type="text/javascript" src="phone.filter.js"></script>
+
+	</body>
+</html>
