@@ -1,8 +1,9 @@
 # AngularBasic
 
 
-bower install
-npm install
-node server/app.js
+**bower install**
+**npm install**
+**cd server**
+**node app.js**
 
 localhost:8080
